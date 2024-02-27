@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Merge{
+    public static void main(String[] args){
+        int[] ar1 = {1,3,5,7,9};
+        int n1 = ar1.length;
+        int[] ar2 = {2,4,6,8,10};
+        int n2 = ar2.length;
+        
+        Map<Integer, Boolean> map = new TreeMap<>();
+        
+        for(int i=0;i<n1;i++){
+            map.put(ar1[i], true);
+        }
+        
+        for(int j=0;j<n2;j++){
+            map.put(ar2[j], true);
+        }
+        
+        for(Map.Entry<Integer, Boolean> m : map.entrySet()){
+            System.out.print(m.getKey() + " ");
+        }
+    }
+}
