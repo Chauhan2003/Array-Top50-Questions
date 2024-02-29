@@ -1,0 +1,22 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        int[] arr = {1,2,3,4,5,6,7};
+        int n = arr.length;
+        
+        // by default priority queue is min heap:
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        
+        for(int num : arr){
+            maxHeap.add(num);
+            minHeap.add(num);
+        }
+        
+        int maxNum = maxHeap.poll();
+        int minNum = minHeap.poll();
+        
+        System.out.print("Max: " + maxNum + ", " + "Min: " + minNum);
+    }
+}
