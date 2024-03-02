@@ -1,0 +1,24 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        
+        int totalsum = Integer.MIN_VALUE;
+        int currsum = 0;
+
+        for(int i=0;i<nums.length;i++){
+            currsum += nums[i];
+
+            if(currsum > totalsum){
+                totalsum = currsum;
+            }
+
+            if(currsum < 0){
+                currsum = 0;
+            }
+        }
+
+        System.out.println(totalsum);
+    }
+}
