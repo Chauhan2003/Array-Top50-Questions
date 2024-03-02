@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        int[] arr = {1,1,2,2,2,2,3,4,4};
+        int n = arr.length;
+        
+        HashSet<Integer> h = new HashSet<>();
+        
+        for(int i=0;i<n;i++){
+            h.add(arr[i]);
+        }
+        
+        int index = 0;
+        for(int ele : h){
+            arr[index] = ele;
+            index++;
+        }
+        
+        System.out.println(Arrays.toString(arr));
+        System.out.println(index); // length of unique element in array
+    }
+}
