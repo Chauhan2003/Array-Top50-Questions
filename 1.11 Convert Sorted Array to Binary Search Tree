@@ -1,0 +1,48 @@
+import java.util.*;
+
+class BST {
+    int data;
+    BST left;
+    BST right;
+
+    BST(int val) {
+        this.data = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class Main {
+    static BST root;
+
+    public static BST sortedArrayToBST(int[] arr, int i, int j) {
+        if (i > j) {
+            return null;
+        }
+
+        int mid = (i + j) / 2;
+        BST node = new BST(arr[mid]);
+
+        node.left = sortedArrayToBST(arr, i, mid - 1);
+        node.right = sortedArrayToBST(arr, mid + 1, j);
+
+        return node;
+    }
+
+    public static void inOrderTraversal(BST root) {
+        if (root == null) {
+            return;
+        }
+
+        inOrderTraversal(root.left);
+        System.out.print(root.data + " ");
+        inOrderTraversal(root.right);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        root = sortedArrayToBST(arr, 0, arr.length - 1);
+
+        inOrderTraversal(root);
+    }
+}
