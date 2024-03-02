@@ -7,3 +7,4 @@ top interview questions of Arrays.
 ### 1.3
 ### 1.4
 ### 1.5
+### 1.7
