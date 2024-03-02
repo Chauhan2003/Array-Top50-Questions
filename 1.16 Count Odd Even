@@ -1,0 +1,22 @@
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        int[] arr = {1, 14, 2, 16, 10, 20};
+        
+        int evenNum = 0;
+        int oddNum = 0;
+        
+        for(int ele : arr){
+            if(ele % 2 == 0){
+                evenNum++;
+            }
+            else{
+                oddNum++;
+            }
+        }
+        
+        System.out.println(evenNum);
+        System.out.println(oddNum);
+    }
+}
